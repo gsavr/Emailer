@@ -23,25 +23,25 @@ passport.use(
       callbackURL: "/auth/google/callback",
       proxy: true,
     },
-    (accessToken, refreshToken, profile, done) => {
+    async (accessToken, refreshToken, profile, done) => {
       // console.log("access token= ", accessToken);
       // console.log("refresh token= ", refreshToken);
-      // console.log("profile: ", profile);
-      User.findOne({ googleID: profile.id }).then((existingUser) => {
-        if (existingUser) {
-          //we already have record with given googleID
-          done(null, existingUser); //null - everything is fine, here is the user info
-        } else {
-          //we don't have this on record, make new record
-          new User({
-            googleID: profile.id,
-            name: profile.displayName,
-            email: profile.emails[0].value,
-          })
-            .save()
-            .then((user) => done(null, user));
-        }
-      });
+      console.log("profile: ", profile);
+      const existingUser = await User.findOne({ googleID: profile.id });
+
+      if (existingUser) {
+        //we already have record with given googleID
+        return done(null, existingUser); //null - everything is fine, here is the user info
+        // if we add 'return' to line above above we can remove the 'else {}' case while leaving the logic
+      }
+      //we don't have this on record, make new record
+      const user = await new User({
+        googleID: profile.id,
+        firstName: profile.name.givenName,
+        lastName: profile.name.familyName,
+        email: profile.emails[0].value,
+      }).save();
+      done(null, user);
     }
   )
 );
