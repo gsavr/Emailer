@@ -4,7 +4,7 @@ const requireLogin = require("../middlewares/requireLogin");
 
 module.exports = (app) => {
   app.post("/api/stripe", requireLogin, async (req, res) => {
-    /* requireLogin is function we are injecting so that when /api/stripe gets vcalled there is a reference yto it to be used eventually */
+    /* requireLogin is function we are injecting so that when /api/stripe gets called there is a reference yto it to be used eventually */
     //console.log(req.body);
     const charge = await stripe.charges.create({
       amount: 500,
