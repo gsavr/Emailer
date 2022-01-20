@@ -24,7 +24,7 @@ class App extends Component {
             <Route exact /* ={true} */ path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />
-            <Route path="/thankyou" component={SurveyClicked} />
+            <Route path="/surveys/thankyou" component={SurveyClicked} />
           </div>
         </BrowserRouter>
       </div>
