@@ -9,7 +9,7 @@ class SurveyList extends Component {
 
   renderSurveys() {
     return this.props.surveys.reverse().map((survey) => {
-      console.log(survey);
+      //console.log(survey);
       return (
         <div key={survey._id} className="card blue-grey lighten-5">
           <div className="card-content">
@@ -27,6 +27,12 @@ class SurveyList extends Component {
           <div className="card-action white">
             <a>Yes: {survey.yes}</a>
             <a>No: {survey.no}</a>
+            <a className="right">
+              Last Customer Reponse:{" "}
+              {!survey.lastResponded
+                ? "No Clicks Yet"
+                : new Date(survey.lastResponded).toLocaleDateString()}
+            </a>
           </div>
         </div>
       );
