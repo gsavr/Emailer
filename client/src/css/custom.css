@@ -1,0 +1,25 @@
+body {
+  background-color: #e7f5fc;
+}
+
+.landing-header {
+  position: absolute;
+  /* text-align: center; */
+  top: 4rem;
+  left: 0;
+  right: 0;
+  /* margin: 0 8rem; */
+  font-size: x-large;
+}
+
+@media screen and (max-width: 768px) {
+  .landing-header {
+    position: inherit; /* it will go back to default (under picture) */
+    bottom: 8rem;
+    margin: 0.25rem 0;
+    top: inherit;
+    font-size: xx-small;
+    left: inherit;
+    /* color: white; */
+  }
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import StripePay from "./StripePay";
+import logo from "../images/logo.png";
 
 class Header extends Component {
   renderContent() {
@@ -50,6 +51,7 @@ class Header extends Component {
             className="left brand-logo"
           >
             EmailMan
+            <img src={logo} alt="Logo" height="45" />
           </Link>
           <ul className="right">{this.renderContent()}</ul>
         </div>
