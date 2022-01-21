@@ -10,6 +10,14 @@ const surveyTemplate = require("../services/emailTemplates/surveyTemplate");
 const Survey = mongoose.model("surveys");
 
 module.exports = (app) => {
+  app.get("/api/surveys", requireLogin, async (req, res) => {
+    const surveys = await Survey.find({
+      _user: req.user.id,
+    }).select({ recipients: false }); //could also be ("-recipients") - leaves out reipients
+
+    res.send(surveys);
+  });
+
   app.get("/api/surveys/:surveyId/:choice", (req, res) => {
     res.redirect("/surveys/thankyou"); //link here and on App.js
   });
@@ -18,7 +26,7 @@ module.exports = (app) => {
     //console.log(req.body);
     const p = new Path("/api/surveys/:surveyId/:choice");
 
-    const events = _.chain(req.body)
+    /* const events =  */ _.chain(req.body)
       .map((event) => {
         const match = p.test(new URL(event.url).pathname); //p.test will return null if not survey id and no choice
         if (match) {
@@ -31,9 +39,28 @@ module.exports = (app) => {
       })
       .compact() // get rid of null items
       .uniqBy("email", "surveyId")
+      //this is what updates mongodB
+      .each(({ surveyId, email, choice }) => {
+        Survey.updateOne(
+          {
+            _id: surveyId,
+            recipients: {
+              $elemMatch: {
+                email: email,
+                responded: false,
+              },
+            },
+          },
+          {
+            $inc: { [choice]: 1 },
+            $set: { "recipients.$.responded": true },
+            lastResponded: new Date(),
+          }
+        ).exec();
+      }) //this is what updates mongodB
       .value();
 
-    console.log(events);
+    /* console.log(events); */
 
     res.send({});
   });
