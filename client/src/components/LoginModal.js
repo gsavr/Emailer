@@ -28,21 +28,21 @@ const LoginModal = () => {
           </a>
         </Modal.Body>
         <Modal.Body>
-          <a href="#" className="login-link">
+          <a href="#" className="login-link" onClick={handleClose}>
             <i class="cib-facebook-f"></i>
             <span> </span>Login with Facebook
           </a>
         </Modal.Body>
         <Modal.Body>
-          <a href="#" className="login-link">
+          <a href="#" className="login-link" onClick={handleClose}>
             <i class="cib-twitter"></i>
             <span> </span>Login with Twitter
           </a>
         </Modal.Body>
         <Modal.Body>
-          <a href="#" className="login-link">
+          <a href="#" className="login-link" onClick={handleClose}>
             <i class="cib-apple"></i>
-            <span> </span>Login with Apple
+            <span> </span>Login with Apple ID
           </a>
         </Modal.Body>
         <Modal.Footer>
