@@ -37,14 +37,14 @@ const SurveyFormReview = ({
       </div>
       <button
         onClick={onSurveyEdit}
-        className="btn left yellow darken-4 waves-effect waves-light"
+        className="btn left yellow darken-4 waves-effect waves-light white-text"
         name="action"
       >
         Edit <i className="material-icons right">mode_edit</i>
       </button>
       <button
         onClick={() => submitSurvey(formValues, history)} //calls action creator(prop from actions, make sure it is passed to Component) with the form values - prop name formValues. arrow function stops it from being called immediately //history comes from withRouter  - must be added to tthe reducers as well
-        className="btn right blue darken-1 waves-effect waves-light"
+        className="btn right blue darken-1 waves-effect waves-light white-text"
         type="submit"
         name="action"
       >

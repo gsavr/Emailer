@@ -1,4 +1,7 @@
 import "materialize-css/dist/css/materialize.css";
+import "@coreui/icons/css/all.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./css/custom.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";

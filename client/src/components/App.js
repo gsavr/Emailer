@@ -2,11 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actions from "../actions";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../css/custom.css";
 
 import Header from "./Header";
 import Landing from "./Landing";
+import Footer from "./Footer";
 import Dashboard from "./Dashboard";
 import SurveyClicked from "./surveys/SurveyClicked";
 import SurveyNew from "./surveys/SurveyNew";
@@ -21,8 +20,9 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-          <div className="container">
+          <div className="container app-wrap">
             <Header />
+            <Footer />
             <Route exact /* ={true} */ path="/" component={Landing} />
             <Route exact path="/surveys" component={Dashboard} />
             <Route path="/surveys/new" component={SurveyNew} />

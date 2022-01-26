@@ -33,7 +33,7 @@ class SurveyForm extends Component {
           {this.renderFields()}
           <Link
             to="/surveys"
-            className="btn left red darken-3 waves-effect waves-light"
+            className="btn left red darken-3 waves-effect waves-light white-text"
             name="action"
           >
             {" "}
@@ -41,7 +41,7 @@ class SurveyForm extends Component {
             <i className="material-icons right">delete_forever</i>
           </Link>
           <button
-            className="btn right blue darken-1 waves-effect waves-light"
+            className="btn right blue darken-1 waves-effect waves-light white-text"
             type="submit"
             name="action"
           >

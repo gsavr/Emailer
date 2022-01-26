@@ -1,0 +1,22 @@
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+.app-wrap {
+  padding-bottom: 5rem; /* Footer height */
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  height: 2.5rem; /* Footer height */
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+
+a:link {
+  text-decoration: none;
+}
