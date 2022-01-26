@@ -10,7 +10,11 @@ const LoginModal = () => {
 
   return (
     <>
-      <Button variant="outline-light" onClick={handleShow}>
+      <Button
+        className="login-button"
+        variant="outline-light"
+        onClick={handleShow}
+      >
         Sign Up | Login
       </Button>
 
