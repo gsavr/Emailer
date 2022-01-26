@@ -17,6 +17,10 @@ body {
   font-size: x-large;
 }
 
+img.landing-img1 {
+  opacity: 0.8;
+}
+
 @media screen and (max-width: 768px) {
   .landing-header {
     position: inherit; /* it will go back to default (under picture) */
@@ -26,5 +30,18 @@ body {
     font-size: xx-small;
     left: inherit;
     /* color: white; */
+  }
+
+  img.landing-img1 {
+    /* margin-top: 10px; */
+    opacity: 0.5;
+  }
+
+  .navbar {
+    padding-top: 0px;
+  }
+
+  nav {
+    height: 60px !important;
   }
 }
