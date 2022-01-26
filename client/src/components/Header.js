@@ -1,19 +1,21 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import StripePay from "./StripePay";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from "../images/logo.png";
+import LoginModal from "./LoginModal";
+import "../css/header.css";
 
 class Header extends Component {
   render() {
     //console.log(this.props);
     return (
       <Navbar
+        collapseOnSelect //prop to make expanded navbar collaspe when a Nav.Link is clicked, make sure to add eventKey to each link
         expand="lg"
         style={{ backgroundColor: "#5d99c7" /* "#68abde" */ }}
         variant="dark"
-        /* className="mr-auto" */
       >
         <Container>
           <Navbar.Brand id="navbar-brand" as={Link} to="/">
@@ -29,27 +31,23 @@ class Header extends Component {
             <div className="nav-bar-1">
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
-                {/* <Nav className="me-auto"> */}
-                <Nav.Link as={Link} to="/surveys">
+                <Nav.Link as={Link} to="/surveys" eventKey="1">
                   Dashboard
                 </Nav.Link>
-                <Navbar.Text>
+                <Navbar.Text eventKey="2">
                   {" "}
                   <Nav.Item>Credits : {this.props.auth.credits}</Nav.Item>{" "}
                 </Navbar.Text>
-                <Nav.Link>
+                <Nav.Link eventKey="3">
                   <StripePay />
                 </Nav.Link>
                 <Nav.Link href="/api/logout" className="nav-link">
                   {this.props.auth.firstName} | <span>Logout</span>
                 </Nav.Link>
-                {/* </Nav> */}
               </Navbar.Collapse>
             </div>
           ) : (
-            <Nav.Link href="/auth/google">
-              <span>Login with Google</span>
-            </Nav.Link>
+            <LoginModal />
           )}
         </Container>
       </Navbar>

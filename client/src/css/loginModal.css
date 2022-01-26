@@ -1,0 +1,29 @@
+a.login-link {
+  color: #6c757d;
+}
+a:hover.login-link {
+  color: #6c757d;
+}
+a:visited.login-link {
+  color: #6c757d;
+}
+a:active.login-link {
+  color: #6c757d;
+}
+
+div.modal-body {
+  border-bottom: 1px solid #dee2e6;
+}
+
+div.modal-footer {
+  background-color: white !important;
+}
+
+div.fade.modal.show {
+  background-color: transparent;
+  box-shadow: none !important;
+}
+
+.btn:focus {
+  background-color: #6c757d;
+}

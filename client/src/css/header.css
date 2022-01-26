@@ -1,0 +1,46 @@
+div.nav-item {
+  color: white;
+}
+
+a.nav-link {
+  color: white;
+}
+a:hover.nav-link {
+  color: white;
+}
+a:visited.nav-link {
+  color: white;
+}
+a:active.nav-link {
+  color: white;
+}
+
+div#responsive-navbar-nav.navbar-collapse.collapse.show {
+  z-index: 1;
+  background-color: #5d99c7e3;
+  border-radius: 3px;
+  text-align: center;
+  padding: inherit;
+  top: 40px;
+  position: relative;
+}
+
+button.navbar-toggler {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+button:focus {
+  background-color: #6c757d;
+}
+
+@media only screen and (min-width: 601px) {
+  a#navbar-brand.navbar-brand,
+  nav .nav-wrapper i,
+  nav a.sidenav-trigger,
+  nav a.sidenav-trigger i {
+    /* height: 0px; */
+    line-height: 10px !important;
+  }
+}
