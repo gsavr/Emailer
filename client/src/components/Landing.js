@@ -1,7 +1,7 @@
 import React from "react";
 import emailMarketing from "../images/email-marketing.png";
 import surveyEmail from "../images/survey-email.png";
-import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import RenderCards from "./landing_page/RenderCards";
 import RenderTabs from "./landing_page/RenderTabs";
 
