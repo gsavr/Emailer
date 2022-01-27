@@ -3,27 +3,35 @@ body {
   background-image: radial-gradient(#e7f5fc, #f7fcff);
 }
 
-/* .me-auto {
-  margin-right: 5px !important;
-  margin-left: 5px;
-} */
-
 .landing-header {
-  position: absolute;
-  /* text-align: center; */
+  position: absolute; /* makes it stay in an absolute place  */
   top: 4rem;
   left: 0;
   right: 0;
-  /* margin: 0 8rem; */
   font-size: x-large;
 }
 
 .landing-info {
-  padding: 30px;
+  padding: 30px; /* creates padding around the info under the main picture in bigger screens */
 }
 
 img.landing-img1 {
   opacity: 0.8;
+}
+
+img.landing-info {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+  padding: 0;
+}
+
+div.tab-body {
+  background-image: radial-gradient(#fdfdfd, #f7fcff);
+}
+
+button.nav-link {
+  color: #485056;
 }
 
 @media screen and (max-width: 768px) {
@@ -42,11 +50,18 @@ img.landing-img1 {
     opacity: 0.5;
   }
 
-  .navbar {
-    padding-top: 0px;
+  div.position-relative {
+    height: 9rem;
   }
 
-  nav {
-    height: 60px !important;
+  .landing-info {
+    padding: 0px;
+  }
+
+  img.landing-info {
+    min-height: 10rem; /* sets better height in iphone */
+    padding: 0;
+    object-fit: cover; /*covers the sides of pic when too big*/
+    object-position: 50% 0%; /*  50% in center horizontally */
   }
 }

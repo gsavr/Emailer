@@ -1,7 +1,9 @@
 import React from "react";
 import emailMarketing from "../images/email-marketing.png";
 import surveyEmail from "../images/survey-email.png";
-import { Container, Row, Col, Card, Tabs, Tab } from "react-bootstrap";
+import { Container, Row, Col, Tabs, Tab } from "react-bootstrap";
+import RenderCards from "./landing_page/RenderCards";
+import RenderTabs from "./landing_page/RenderTabs";
 
 const Landing = () => {
   return (
@@ -33,58 +35,13 @@ const Landing = () => {
         </Row>
       </Container>
       <Container className="h-100">
-        <Row className="align-items-center h-100">
-          <Col>
-            <Card border="light" style={{ width: "25rem" }}>
-              <Card.Body>
-                <Card.Title>Gather Feedback Quicker</Card.Title>
-                <Card.Text>
-                  Deliver Surveys Through Customers’ Preferred Channels
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card border="light" style={{ width: "25rem" }}>
-              <Card.Body>
-                <Card.Title>Understand Survey Responses</Card.Title>
-                <Card.Text>Understand Key Themes with our Analytics</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col>
-            <Card border="light" style={{ width: "25rem" }}>
-              <Card.Body>
-                <Card.Title>Create a Custom Survey Experience</Card.Title>
-                <Card.Text>
-                  Create Unique Survey Paths Based on Responses
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
+        <Row className="align-items-center h-100 cards">
+          <RenderCards />
         </Row>
       </Container>
       <Container>
         <Row>
-          <Tabs
-            defaultActiveKey="profile"
-            id="uncontrolled-tab-example"
-            className="mb-6"
-          >
-            <Tab eventKey="home" title="Home">
-              <Card.Body>
-                <Card.Text>
-                  Create Unique Survey Paths Based on Responses
-                </Card.Text>
-              </Card.Body>
-            </Tab>
-            <Tab eventKey="profile" title="Profile">
-              {/*  <Sonnet /> */}
-            </Tab>
-            <Tab eventKey="contact" title="Contact" disabled>
-              {/* <Sonnet /> */}
-            </Tab>
-          </Tabs>
+          <RenderTabs />
         </Row>
       </Container>
     </Container>

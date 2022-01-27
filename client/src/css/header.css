@@ -68,3 +68,18 @@ button:focus {
     right: 10px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding-top: 0px;
+  }
+
+  nav {
+    height: 60px !important;
+  }
+}
+
+/* .me-auto {
+  margin-right: 5px !important;
+  margin-left: 5px;
+}  take this out from nav to customize the links */
