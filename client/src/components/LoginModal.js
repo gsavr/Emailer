@@ -19,9 +19,9 @@ const LoginModal = () => {
   const renderModalLinks = () => {
     return _.map(loginServices, ({ link, icon, text }) => {
       return (
-        <Modal.Body>
+        <Modal.Body key={text}>
           <a href={link} className="login-link" onClick={handleClose}>
-            <i class={icon}></i> <span> </span>Login with {text}
+            <i className={icon}></i> <span> </span>Login with {text}
           </a>
         </Modal.Body>
       );

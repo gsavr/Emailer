@@ -23,7 +23,10 @@ const SurveyFormReview = ({
 
   return (
     <div>
-      <h6 className="blue-grey-text" style={{ textAlign: "center" }}>
+      <h6
+        className="blue-grey-text"
+        style={{ textAlign: "center", paddingTop: "0.5rem" }}
+      >
         Please confirm your survey entries. If you wish to revise, please click
         edit.
         <p>When ready click on Send Survey</p>
@@ -54,10 +57,10 @@ const SurveyFormReview = ({
   );
 };
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   //   console.log(state);
   return { formValues: state.form.surveyForm.values };
-}
+};
 
 export default connect(mapStateToProps, actions)(withRouter(SurveyFormReview));
 //withRouter remembers the browsing history - so when you submit the email survey, it will travel to the surveys page

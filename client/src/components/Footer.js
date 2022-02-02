@@ -24,17 +24,17 @@ const Footer = () => {
       <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
         <li className="ms-3">
           <a className="text-muted" href="#">
-            <i class="cib-twitter"></i>
+            <i className="cib-twitter"></i>
           </a>
         </li>
         <li className="ms-3">
           <a className="text-muted" href="#">
-            <i class="cib-instagram"></i>
+            <i className="cib-instagram"></i>
           </a>
         </li>
         <li className="ms-3">
           <a className="text-muted" href="#">
-            <i class="cib-facebook-f"></i>
+            <i className="cib-facebook-f"></i>
           </a>
         </li>
       </ul>

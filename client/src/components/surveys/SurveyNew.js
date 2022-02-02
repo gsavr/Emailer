@@ -1,29 +1,21 @@
 //SurveyNew shows SurveyForm and SurveyFormReview
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { reduxForm } from "redux-form";
 import SurveyForm from "./SurveyForm";
 import SurveyFormReview from "./SurveyFormReview";
 
-class SurveyNew extends Component {
-  state = { showReview: false };
+const SurveyNew = () => {
+  const [showReview, setShowReview] = useState(false);
 
-  renderContent() {
-    if (this.state.showReview) {
-      return (
-        <SurveyFormReview
-          onSurveyEdit={() => this.setState({ showReview: false })}
-        />
-      );
+  const renderContent = () => {
+    if (showReview) {
+      return <SurveyFormReview onSurveyEdit={() => setShowReview(false)} />;
     }
-    return (
-      <SurveyForm onSurveySubmit={() => this.setState({ showReview: true })} />
-    );
-  }
+    return <SurveyForm onSurveySubmit={() => setShowReview(true)} />;
+  };
 
-  render() {
-    return <div>{this.renderContent()}</div>;
-  }
-}
+  return <div>{renderContent()}</div>;
+};
 
 export default reduxForm({
   form: "surveyForm", //if we put surveyForm here it will destroy the form when unmounted

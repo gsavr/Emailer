@@ -1,14 +1,12 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { fetchSurveys } from "../../actions";
 
-class SurveyList extends Component {
-  componentDidMount() {
-    this.props.fetchSurveys();
-  }
+const SurveyList = ({ fetchSurveys, surveys }) => {
+  useEffect(() => fetchSurveys());
 
-  renderSurveys() {
-    return this.props.surveys.reverse().map((survey) => {
+  const renderSurveys = () => {
+    return surveys.reverse().map((survey) => {
       //console.log(survey);
       return (
         <div key={survey._id} className="card blue-grey lighten-5">
@@ -37,22 +35,20 @@ class SurveyList extends Component {
         </div>
       );
     });
-  }
+  };
 
-  render() {
-    return (
-      <div>
-        <p style={{ margin: "40px" }}> </p>
-        <h5 className="center text blue-grey-text">List of Surveys Sent:</h5>
-        <p style={{ margin: "40px" }}> </p>
-        <div>{this.renderSurveys()}</div>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <p style={{ margin: "40px" }}> </p>
+      <h5 className="center text blue-grey-text">List of Surveys Sent:</h5>
+      <p style={{ margin: "40px" }}> </p>
+      <div>{renderSurveys()}</div>
+    </div>
+  );
+};
 
-function mapStateToProps({ surveys }) {
-  return { surveys: surveys };
-}
+const mapStateToProps = ({ surveys }) => {
+  return { surveys };
+};
 
 export default connect(mapStateToProps, { fetchSurveys })(SurveyList);
