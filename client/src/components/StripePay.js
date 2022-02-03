@@ -3,7 +3,7 @@ import StripeCheckout from "react-stripe-checkout";
 import { connect } from "react-redux";
 import * as actions from "../actions";
 
-const StripePay = () => {
+const StripePay = ({ handleToken }) => {
   //debugger;
 
   return (
@@ -11,7 +11,7 @@ const StripePay = () => {
       name="EMailMan"
       description="5 email survey credits"
       amount={500} //$5 in USD
-      token={(token) => this.props.handleToken(token)} //call action creator
+      token={(token) => handleToken(token)} //call action creator
       stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}
     >
       <a>Add Credits</a>
