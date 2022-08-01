@@ -11,9 +11,9 @@ const LoginModal = () => {
 
   const loginServices = [
     { link: "/auth/google", icon: "cib-google", text: " Google" },
-    { link: "#", icon: "cib-apple", text: " Apple ID" },
-    { link: "#", icon: "cib-facebook-f", text: " Facebook" },
-    { link: "#", icon: "cib-twitter", text: " Twitter" },
+    { link: "#", icon: "cib-apple", text: " Apple ID (coming soon)" },
+    { link: "#", icon: "cib-facebook-f", text: " Facebook (coming soon)" },
+    { link: "#", icon: "cib-twitter", text: " Twitter (coming soon)" },
   ];
 
   const renderModalLinks = () => {
