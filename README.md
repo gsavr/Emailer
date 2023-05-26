@@ -3,10 +3,13 @@
 Full Stack React.js and Node Project
 
 - Built to provide an email service to get feedback from clients using Sendgrid as the email provider and Stripe for payment
+<p></p>
+
+<img src="./client/src/images/demo.gif" width="600">
 
 ## Link to Project
 
-https://glacial-sands-58335.herokuapp.com/
+[Email-Man](https://emailman.herokuapp.com/)
 
 ## Tech Used
 
