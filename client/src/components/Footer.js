@@ -26,7 +26,12 @@ const Footer = () => {
 
       <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
         <li className="ms-3">
-          <a className="text-muted" href="https://www.giorgiosavron.com">
+          <a
+            className="text-muted"
+            href="https://www.giorgiosavron.com"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={gs} alt="GS-Logo" eight={25} width={25} />
           </a>
         </li>
@@ -34,12 +39,19 @@ const Footer = () => {
           <a
             className="text-muted"
             href="https://www.linkedin.com/in/giorgio-savron/"
+            target="_blank"
+            rel="noreferrer"
           >
             <img src={linkedin} alt="Linkedin-Logo" height={25} width={25} />
           </a>
         </li>
         <li className="ms-3">
-          <a className="text-muted" href="https://github.com/gsavr/Emailer">
+          <a
+            className="text-muted"
+            href="https://github.com/gsavr/Emailer"
+            target="_blank"
+            rel="noreferrer"
+          >
             <img src={github} alt="github-Logo" eight={25} width={25} />
           </a>
         </li>
