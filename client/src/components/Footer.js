@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo_dark.png";
+import gs from "../images/gs_logo.png";
+import github from "../images/github.png";
+import linkedin from "../images/linkedin.png";
 import "../css/footer.css";
 
 const Footer = () => {
@@ -18,23 +21,26 @@ const Footer = () => {
             className="d-inline-block align-center"
           />
         </Link>
-        <span className="text-muted">&copy; 2022 Giorgio Savron</span>
+        <span className="text-muted">&copy; 2023 Giorgio Savron</span>
       </div>
 
       <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
         <li className="ms-3">
-          <a className="text-muted" href="#">
-            <i className="cib-twitter"></i>
+          <a className="text-muted" href="https://www.giorgiosavron.com">
+            <img src={gs} alt="GS-Logo" eight={25} width={25} />
           </a>
         </li>
         <li className="ms-3">
-          <a className="text-muted" href="#">
-            <i className="cib-instagram"></i>
+          <a
+            className="text-muted"
+            href="https://www.linkedin.com/in/giorgio-savron/"
+          >
+            <img src={linkedin} alt="Linkedin-Logo" height={25} width={25} />
           </a>
         </li>
         <li className="ms-3">
-          <a className="text-muted" href="#">
-            <i className="cib-facebook-f"></i>
+          <a className="text-muted" href="https://github.com/gsavr/Emailer">
+            <img src={github} alt="github-Logo" eight={25} width={25} />
           </a>
         </li>
       </ul>
