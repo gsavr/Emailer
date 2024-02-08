@@ -21,7 +21,9 @@ const Footer = () => {
             className="d-inline-block align-center"
           />
         </Link>
-        <span className="text-muted">&copy; 2023 Giorgio Savron</span>
+        <span className="text-muted">
+          &copy; 2024, Giorgio Savron Development
+        </span>
       </div>
 
       <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
